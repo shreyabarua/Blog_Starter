@@ -1,0 +1,33 @@
+{{#each posts as |post|}}
+    <div>{{post.name}}</div>
+
+    {{#if location}}
+        <div>{{post.location}}</div>
+    {{/if}}
+
+    <div>{{post.entry}}</div>
+    <div>{{post.date}}</div>
+
+{{/each}}
+
+
+
+<form method="POST" action="/blog">
+    <div>
+        Name
+        <br>
+        <input type="text" name="name" required>
+        <br>
+
+        Location
+        <br>
+        <input type="text" name="location">
+        <br>
+
+        Entry
+        <br>
+        <textarea name="entry" rows="10" cols="50" required></textarea>
+        <br>
+
+        <input type="submit" value="Post">
+</form>
